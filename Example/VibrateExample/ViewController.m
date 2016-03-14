@@ -27,17 +27,17 @@
 
 - (IBAction)vibrate:(UIButton *)sender {
     [DPVibrateHelper vibrateWithVibrations:
-     [Vibration vibrationWithDuration:200],
-     [Vibration vibrationWithDuration:200 delayDuration:200],
-     [Vibration vibrationWithDuration:100 delayDuration:300],
-     [Vibration vibrationWithDuration:100 delayDuration:100],
-     [Vibration vibrationWithDuration:100 delayDuration:100],
-     [Vibration vibrationWithDuration:100 delayDuration:300],
-     [Vibration vibrationWithDuration:100 delayDuration:100],
-     [Vibration vibrationWithDuration:100 delayDuration:100],
-     [Vibration vibrationWithDuration:100 delayDuration:100],
-     [Vibration vibrationWithDuration:150 delayDuration:300],
-     [Vibration vibrationWithDuration:150 delayDuration:100],
+     [DPVibration vibrationWithDuration:200],
+     [DPVibration vibrationWithDuration:200 delayDuration:200],
+     [DPVibration vibrationWithDuration:100 delayDuration:300],
+     [DPVibration vibrationWithDuration:100 delayDuration:100],
+     [DPVibration vibrationWithDuration:100 delayDuration:100],
+     [DPVibration vibrationWithDuration:100 delayDuration:300],
+     [DPVibration vibrationWithDuration:100 delayDuration:100],
+     [DPVibration vibrationWithDuration:100 delayDuration:100],
+     [DPVibration vibrationWithDuration:100 delayDuration:100],
+     [DPVibration vibrationWithDuration:150 delayDuration:300],
+     [DPVibration vibrationWithDuration:150 delayDuration:100],
      nil];
 }
 

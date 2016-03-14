@@ -13,18 +13,18 @@ void AudioServicesPlaySystemSoundWithVibration(SystemSoundID inSystemSoundID, id
 @implementation DPVibrateHelper
 
 +(void)vibrateWithDuration:(long)duration{
-    [DPVibrateHelper vibrateWithVibration:[Vibration vibrationWithDuration:duration]];
+    [DPVibrateHelper vibrateWithVibration:[DPVibration vibrationWithDuration:duration]];
 }
 
-+(void)vibrateWithVibration:(Vibration*)vibration{
++(void)vibrateWithVibration:(DPVibration*)vibration{
     [DPVibrateHelper vibrateWithVibrations:vibration, nil];
 }
 
-+(void)vibrateWithVibrations:(Vibration*)vibrations, ... NS_REQUIRES_NIL_TERMINATION{
++(void)vibrateWithVibrations:(DPVibration*)vibrations, ... NS_REQUIRES_NIL_TERMINATION{
     va_list argumentList;
     va_start(argumentList, vibrations);
     NSMutableArray *arguments = [NSMutableArray array];
-    for (Vibration *argument = vibrations; argument != nil; argument = va_arg(argumentList, Vibration*)){
+    for (DPVibration *argument = vibrations; argument != nil; argument = va_arg(argumentList, DPVibration*)){
         [arguments addObject:argument];
     }
     va_end(argumentList);
@@ -32,7 +32,7 @@ void AudioServicesPlaySystemSoundWithVibration(SystemSoundID inSystemSoundID, id
     NSMutableDictionary* dict = [NSMutableDictionary dictionary];
     NSMutableArray* arr = [NSMutableArray array ];
     
-    for(Vibration *vibration in arguments){
+    for(DPVibration *vibration in arguments){
         if(vibration.duration <= 0){
             continue;
         }
@@ -54,14 +54,14 @@ void AudioServicesPlaySystemSoundWithVibration(SystemSoundID inSystemSoundID, id
 @end
 
 
-@implementation Vibration
+@implementation DPVibration
 
 +(instancetype)vibrationWithDuration:(long)duration{
-    return [Vibration vibrationWithDuration:duration delayDuration:0];
+    return [DPVibration vibrationWithDuration:duration delayDuration:0];
 }
 
 +(instancetype)vibrationWithDuration:(long)duration delayDuration:(long)delayDuration{
-    Vibration *vibration = [Vibration new];
+    DPVibration *vibration = [DPVibration new];
     vibration.duration = duration;
     vibration.delayDuration = delayDuration;
     return vibration;

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-@class Vibration;
+@class DPVibration;
 
 @interface DPVibrateHelper : NSObject
 
@@ -27,7 +27,7 @@
  @author Ilya Shkolnik
  @param vibrate Vibrate object
  */
-+(void)vibrateWithVibration:(nonnull Vibration*)vibration;
++(void)vibrateWithVibration:(nonnull DPVibration*)vibration;
 
 /**
  Vibrate action from Vibrate objects
@@ -35,12 +35,12 @@
  @author Ilya Shkolnik
  @param vibrates Vibrate objects sequence
  */
-+(void)vibrateWithVibrations:(nonnull Vibration*)vibrations, ... NS_REQUIRES_NIL_TERMINATION;
++(void)vibrateWithVibrations:(nonnull DPVibration*)vibrations, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end
 
 
-@interface Vibration : NSObject
+@interface DPVibration : NSObject
 
 /*!
  * Vibration duration in milliseconds
