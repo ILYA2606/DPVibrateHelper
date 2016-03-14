@@ -27,7 +27,7 @@
  @author Ilya Shkolnik
  @param vibrate Vibrate object
  */
-+(void)vibrateWithVibration:(Vibration*)vibration;
++(void)vibrateWithVibration:(nonnull Vibration*)vibration;
 
 /**
  Vibrate action from Vibrate objects
@@ -35,7 +35,7 @@
  @author Ilya Shkolnik
  @param vibrates Vibrate objects sequence
  */
-+(void)vibrateWithVibrations:(Vibration*)vibrations, ... NS_REQUIRES_NIL_TERMINATION;
++(void)vibrateWithVibrations:(nonnull Vibration*)vibrations, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end
 
@@ -59,7 +59,7 @@
  @param duration Duration in milliseconds
  @return Vibration object
  */
-+(instancetype)vibrationWithDuration:(long)duration;
++(nonnull instancetype)vibrationWithDuration:(long)duration;
 
 /**
  Vibration object from duration
@@ -69,6 +69,6 @@
  @param delayDuration Delay duration before vibration in milliseconds
  @return Vibration object
  */
-+(instancetype)vibrationWithDuration:(long)duration delayDuration:(long)delayDuration;
++(nonnull instancetype)vibrationWithDuration:(long)duration delayDuration:(long)delayDuration;
 
 @end
